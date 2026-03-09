@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Arnayu's Ayurveda - Authentic Ayurvedic consultation, Panchakarma therapies, and herbal medicines in Nagpur. Led by Dr. Gauri Deshpande Kewale.">
+    <meta name="keywords" content="Ayurveda, Panchakarma, Herbal Medicine, Health, Nagpur, Dr. Gauri Deshpande Kewale">
+    <title>Arnayu's Ayurveda | Authentic Healing in Nagpur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small inline fixes */
+        .treatment-wrapper {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .treatment-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar navbar-fixed">
+        <div class="container d-flex justify-content-between align-items-center"
+            style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="#" class="navbar-brand">
+                <img src="assets/images/logo.jpg" alt="Arnayu's Ayurveda Logo"
+                    style="height: 50px; vertical-align: middle;">
+                Arnayu's Ayurveda
+            </a>
+            <div class="menu-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="main-nav" style="display: flex; list-style: none;">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Clinic</a></li>
+                    <li><a href="#treatments" class="nav-link">Treatments</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <h1>Harmonize Your Life with Authentic Ayurveda</h1>
+                <p>Experience the ancient wisdom of holistic healing at Arnayu's Ayurveda clinic.</p>
+                <a href="tel:7875789518" class="btn-premium">Schedule a Consultation</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Our Clinic</h2>
+                <div class="row align-items-center" style="align-items: center;">
+                    <div class="col-md-6">
+                        <p
+                            style="font-size: 1.1rem; color: var(--text-light); text-align: center; max-width: 700px; margin: 0 auto;">
+                            Arnayu's Ayurveda provides authentic Ayurvedic consultation, Panchakarma therapies, and
+                            herbal medicines to restore natural health and balance. Led by <strong>Dr. Gauri Deshpande
+                                Kewale</strong>, we focus on treating the root cause of ailments and promoting
+                            sustainable wellness through time-tested methods.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatments Section -->
+        <section id="treatments" class="section" style="background-color: var(--glass-bg);">
+            <div class="container">
+                <h2 class="section-title">Treatments & Panchakarma</h2>
+                <div class="treatment-wrapper" style="box-shadow: none;">
+                    <img src="assets/images/treatments.jpg" alt="Ayurvedic Treatment"
+                        style="border-radius: 20px; box-shadow: var(--shadow-soft);"
+                        onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?auto=format&fit=crop&q=80&w=1200'">
+                    <div style="padding: 30px 0; text-align: center;">
+                        <h3
+                            style="font-family: 'Playfair Display', serif; color: var(--primary-green); margin-bottom: 10px; font-size: 1.75rem;">
+                            Our Holistic Approach</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">
+                            Customized Panchakarma therapies designed for your unique constitution to restore balance
+                            and vitality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="container">
+                <h2 class="section-title">Exclusive Ayurvedic Products</h2>
+                <div class="product-grid">
+                    <!-- Products will be generated dynamically by script.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" style="background-color: var(--primary-green); color: white;">
+            <div class="container">
+                <h2 class="section-title" style="color: white; border-bottom: none;">Connect With Us</h2>
+                <div class="row">
+                    <div class="col-md-6" style="text-align: left; padding: 40px;">
+                        <h3 style="margin-bottom: 20px;">Contact Information</h3>
+                        <p><i class="fas fa-stethoscope" style="margin-right: 10px; color: var(--accent-gold);"></i>
+                            <strong>Doctor:</strong> Dr. Gauri Deshpande Kewale
+                        </p>
+                        <p><i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--accent-gold);"></i>
+                            <strong>Phone:</strong> <a href="tel:7875789518"
+                                style="color: white; text-decoration: none;">7875789518</a>
+                        </p>
+                        <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--accent-gold);"></i>
+                            Plot no 2, Shop no 1, 3rd Bus Stop, Gopal Nagar, Nagpur</p>
+                        <div style="margin-top: 30px;">
+                            <a href="https://share.google/nhYxDbxBW6MKNbx7Q" target="_blank" class="btn-premium"
+                                style="background: white; color: var(--primary-green); box-shadow: none;">
+                                <i class="fas fa-directions" style="margin-right: 10px;"></i>Get Directions
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Simple contact form concept or just a nice image -->
+                        <div
+                            style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 20px; backdrop-filter: blur(5px);">
+                            <h4 style="margin-bottom: 20px;">Opening Hours</h4>
+                            <p>Monday - Saturday: 9:00 AM - 8:00 PM</p>
+                            <p>Sunday: By Appointment Only</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 40px 0; text-align: center; border-top: 1px solid rgba(0,0,0,0.05); background: white;">
+        <div class="container">
+            <img src="assets/images/logo.jpg" alt="Logo"
+                style="height: 40px; filter: grayscale(1); opacity: 0.6; margin-bottom: 20px;">
+            <p style="color: var(--text-light);">&copy; 2026 Arnayu's Ayurveda Clinic. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="float-container">
+        <a href="tel:7875789518" class="btn-float btn-call" title="Call Us"><i class="fas fa-phone"></i></a>
+        <a href="https://wa.me/917875789518" class="btn-float btn-whatsapp" title="WhatsApp Us"><i
+                class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
