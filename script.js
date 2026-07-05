@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     generateProducts();
 
-});    // 2. STICKY NAVBAR EFFECT
+   // 2. STICKY NAVBAR EFFECT
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
