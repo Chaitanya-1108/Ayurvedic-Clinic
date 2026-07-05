@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.dataset.aos = "fade-up";
 
             const slug = product.toLowerCase().replace(/ /g, '-');
+
             card.innerHTML = `
                 <div class="product-img-wrapper">
                     <img src="assets/images/products/${slug}.jpg" 
@@ -28,19 +29,32 @@ document.addEventListener('DOMContentLoaded', () => {
                          class="product-img" 
                          loading="lazy">
                 </div>
-                <h3 class="product-name" style="font-size: 1.25rem; font-weight: 600; color: var(--primary-green);">${product}</h3>
-                <p class="product-price" style="color: var(--accent-gold); font-weight: 700; margin-top: 10px;">Premium Herbal Formula</p>
+
+                <h3 class="product-name" 
+                    style="font-size: 1.25rem; font-weight: 600; color: var(--primary-green);">
+                    ${product}
+                </h3>
+
+                <p class="product-price" 
+                   style="color: var(--accent-gold); font-weight: 700; margin-top: 10px;">
+                   Premium Herbal Formula
+                </p>
+
                 <div style="margin-top: 15px;">
-                    <button class="btn-premium" style="padding: 10px 20px; font-size: 0.9rem;">Enquire Now</button>
+                    <button class="btn-premium" 
+                            style="padding: 10px 20px; font-size: 0.9rem;">
+                        Enquire Now
+                    </button>
                 </div>
             `;
+
             productGrid.appendChild(card);
         });
     };
 
     generateProducts();
 
-    // 2. STICKY NAVBAR EFFECT
+});    // 2. STICKY NAVBAR EFFECT
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
