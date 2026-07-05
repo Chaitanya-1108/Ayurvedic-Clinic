@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. PRODUCT LIST MANAGEMENT
+    console.log("JS Loaded Successfully");
+
+
+    // PRODUCTS
     const products = [
         "Chavanprash",
         "Shatavari Kalp",
@@ -13,108 +16,82 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
 
-    const generateProducts = () => {
-
-        const productGrid = document.querySelector('.product-grid');
-
-        if (!productGrid) {
-            console.log("Product grid not found");
-            return;
-        }
+    const productGrid = document.querySelector('.product-grid');
 
 
-        products.forEach(product => {
+    if(productGrid){
 
-            const card = document.createElement('div');
-
-            card.classList.add('product-card');
-
-            card.dataset.aos = "fade-up";
+        products.forEach(product=>{
 
 
             const slug = product
-                .toLowerCase()
-                .replace(/\s+/g, '-');
+            .toLowerCase()
+            .replace(/\s+/g,'-');
 
 
-            card.innerHTML = `
-                <div class="product-img-wrapper">
-
-                    <img 
-                        src="assets/images/products/${slug}.jpg"
-                        alt="${product}"
-                        class="product-img"
-                        loading="lazy"
-                    >
-
-                </div>
+            const card=document.createElement('div');
 
 
-                <h3 class="product-name"
-                    style="
-                    font-size:1.25rem;
-                    font-weight:600;
-                    color:var(--primary-green);
-                    ">
-                    ${product}
-                </h3>
+            card.className="product-card";
 
 
-                <p class="product-price"
-                    style="
-                    color:var(--accent-gold);
-                    font-weight:700;
-                    margin-top:10px;
-                    ">
-                    Premium Herbal Formula
-                </p>
+            card.innerHTML=`
+
+            <div class="product-img-wrapper">
+
+                <img 
+                src="assets/images/products/${slug}.jpg"
+                class="product-img"
+                alt="${product}"
+                >
+
+            </div>
 
 
-                <div style="margin-top:15px;">
+            <h3 class="product-name">
+                ${product}
+            </h3>
 
-                    <button 
-                    class="btn-premium"
-                    style="
-                    padding:10px 20px;
-                    font-size:0.9rem;
-                    ">
-                    Enquire Now
-                    </button>
 
-                </div>
+            <p class="product-price">
+                Premium Herbal Formula
+            </p>
+
+
+            <button class="btn-premium">
+                Enquire Now
+            </button>
+
             `;
 
 
             productGrid.appendChild(card);
 
+
         });
 
-    };
-
-
-    generateProducts();
+    }
 
 
 
 
-    // 2. STICKY NAVBAR EFFECT
 
-    const navbar = document.querySelector('.navbar');
+
+    // NAVBAR
+
+    const navbar=document.querySelector('.navbar');
 
 
     if(navbar){
 
         window.addEventListener('scroll',()=>{
 
-            if(window.scrollY > 50){
 
-                navbar.classList.add('scrolled');
+            navbar.classList.toggle(
+                'scrolled',
+                window.scrollY>50
+            );
 
-            }else{
-
-                navbar.classList.remove('scrolled');
-
-            }
 
         });
 
@@ -123,21 +100,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 3. MOBILE MENU
 
-    const mobileToggle = document.getElementById('mobile-toggle');
 
-    const mainNav = document.getElementById('main-nav');
+    // MOBILE MENU
+
+
+    const mobileToggle=
+    document.getElementById('mobile-toggle');
+
+
+    const mainNav=
+    document.getElementById('main-nav');
 
 
 
     if(mobileToggle && mainNav){
 
-        mobileToggle.addEventListener('click',()=>{
+
+        mobileToggle.onclick=()=>{
 
             mainNav.classList.toggle('active');
 
-        });
+        };
+
 
     }
 
@@ -145,70 +130,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 4. SMOOTH SCROLL
 
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+
+    // SMOOTH SCROLL
 
 
-        anchor.addEventListener('click',function(e){
+    document.querySelectorAll('a[href^="#"]')
+    .forEach(link=>{
+
+
+        link.onclick=(e)=>{
+
 
             e.preventDefault();
 
 
-            if(mainNav && mainNav.classList.contains('active')){
-
-                mainNav.classList.remove('active');
-
-            }
-
-
-
-            const targetId=this.getAttribute('href');
-
-
-            if(targetId==="#"){
-
-                window.scrollTo({
-
-                    top:0,
-
-                    behavior:"smooth"
-
-                });
-
-                return;
-            }
-
-
-            const target=document.querySelector(targetId);
-
+            let target=
+            document.querySelector(
+                link.getAttribute('href')
+            );
 
 
             if(target){
 
-
-                const headerOffset=80;
-
-
-                const position=
-                target.getBoundingClientRect().top+
-                window.pageYOffset-
-                headerOffset;
-
-
-
-                window.scrollTo({
-
-                    top:position,
-
+                target.scrollIntoView({
                     behavior:"smooth"
-
                 });
 
             }
 
-        });
+
+        };
+
 
     });
 
@@ -218,68 +172,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 5. LEAF ANIMATION
+
+    // LEAF ANIMATION
 
 
-    const createLeaf=()=>{
+    function createLeaf(){
 
 
-        const leaf=document.createElement('div');
+        const leaf=document.createElement("div");
 
 
         leaf.className="leaf";
 
 
-        leaf.innerHTML=`
-        <svg width="24" height="24" viewBox="0 0 24 24">
-            <path 
-            d="M12 2C12 2 4 10 4 15C4 18.3 6.7 21 10 21C11.1 21 12.1 20.7 13 20.2C13.9 20.7 14.9 21 16 21C19.3 21 22 18.3 22 15C22 10 14 2 14 2H12Z"
-            fill="#2d6a4f"
-            opacity="0.4"/>
-        </svg>
-        `;
+        leaf.innerHTML="🍃";
 
 
-
-        leaf.style.left=Math.random()*100+"vw";
-
-        leaf.style.top="-50px";
-
-
-
-        const duration=Math.random()*10+10;
-
-        const drift=Math.random()*200-100;
-
-
-
-        leaf.animate([
-
-            {
-            transform:`translate(0,0) rotate(0deg)`,
-            opacity:0
-            },
-
-
-            {
-            transform:`translate(${drift}px,50vh) rotate(180deg)`,
-            opacity:0.5
-            },
-
-
-            {
-            transform:`translate(${drift*2}px,110vh) rotate(360deg)`,
-            opacity:0
-            }
-
-
-        ],{
-
-            duration:duration*1000,
-
-            easing:"linear"
-
-        });
+        leaf.style.left=
+        Math.random()*100+"vw";
 
 
 
@@ -291,10 +201,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             leaf.remove();
 
-        },duration*1000);
+        },8000);
 
 
-    };
+
+    }
 
 
 
@@ -306,20 +217,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // 6. FADE ANIMATION OBSERVER
+
+    // FADE ANIMATION
 
 
-    const fadeObserver=new IntersectionObserver(entries=>{
+    const observer =
+    new IntersectionObserver(items=>{
 
 
-        entries.forEach(entry=>{
+        items.forEach(item=>{
 
 
-            if(entry.isIntersecting){
+            if(item.isIntersecting){
 
-                entry.target.style.opacity="1";
 
-                entry.target.style.transform="translateY(0)";
+                item.target.classList.add(
+                    "show"
+                );
+
 
             }
 
@@ -327,31 +242,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
 
-    },{
-
-        threshold:0.1
-
     });
 
 
 
-    document
-    .querySelectorAll('.product-card,.section-title,#about p')
-    .forEach(el=>{
-
-
-        el.style.opacity="0";
-
-        el.style.transform="translateY(20px)";
-
-        el.style.transition=
-        "all 0.8s cubic-bezier(0.16,1,0.3,1)";
-
-
-        fadeObserver.observe(el);
-
-
-    });
+    document.querySelectorAll(
+        '.product-card,.section-title,#about p'
+    )
+    .forEach(el=>observer.observe(el));
 
 
 
