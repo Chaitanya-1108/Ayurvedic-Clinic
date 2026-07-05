@@ -1,14 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 1. PRODUCT LIST MANAGEMENT
     const products = [
-        "Chavanprash",
-        "Shatavari Kalp",
-        "Suvarna Prashan",
-        "Hair Pack",
-        "Hair Oil",
-        "Face Pack",
-        "Massage Oil",
-        "Diwali Kit"
+        {
+            name: "Chavanprash",
+            image: "Chavanprash.jpg"
+        },
+        {
+            name: "Shatavari Kalp",
+            image: "Shatavari Kalp.jpg"
+        },
+        {
+            name: "Suvarna Prashan",
+            image: "Suvarna Prashan.jpg"
+        },
+        {
+            name: "Hair Pack",
+            image: "Hair Pack.jpg"
+        },
+        {
+            name: "Hair Oil",
+            image: "Hair Oil.jpg"
+        },
+        {
+            name: "Face Pack",
+            image: "Face Pack.jpg"
+        },
+        {
+            name: "Massage Oil",
+            image: "Massage Oil.jpg"
+        },
+        {
+            name: "Diwali Kit",
+            image: "Diwali Kit.jpg"
+        }
     ];
 
     const generateProducts = () => {
@@ -20,19 +44,17 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('product-card');
             card.dataset.aos = "fade-up";
 
-            const slug = product.toLowerCase().replace(/ /g, '-');
-
             card.innerHTML = `
                 <div class="product-img-wrapper">
-                    <img src="assets/images/products/${slug}.jpg" 
-                         alt="${product}" 
+                    <img src="assets/images/products/${product.image}" 
+                         alt="${product.name}" 
                          class="product-img" 
                          loading="lazy">
                 </div>
 
                 <h3 class="product-name" 
                     style="font-size: 1.25rem; font-weight: 600; color: var(--primary-green);">
-                    ${product}
+                    ${product.name}
                 </h3>
 
                 <p class="product-price" 
